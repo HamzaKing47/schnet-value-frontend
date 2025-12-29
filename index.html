@@ -1,13 +1,51 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>client</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- Add this script to head -->
+  <script type="text/javascript">
+    // Global function that Google Translate calls
+    function googleTranslateElementInit() {
+      // Wait for DOM to be ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTranslate);
+      } else {
+        initTranslate();
+      }
+      
+      function initTranslate() {
+        if (typeof google !== 'undefined' && google.translate) {
+          try {
+            new google.translate.TranslateElement(
+              { 
+                pageLanguage: 'de',
+                includedLanguages: 'en,fr,es,it,nl,pl,tr,ru,ar,zh-CN,ja,ko',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+              },
+              'google_translate_element'
+            );
+            
+            // Hide the default Google banner
+            const interval = setInterval(() => {
+              const banner = document.querySelector('.goog-te-banner-frame');
+              if (banner) {
+                banner.style.display = 'none';
+                clearInterval(interval);
+              }
+            }, 100);
+          } catch (e) {
+            console.error('Google Translate init error:', e);
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>

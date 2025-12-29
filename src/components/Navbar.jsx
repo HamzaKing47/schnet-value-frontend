@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
+import GoogleTranslateWithSearch from "./GoogleTranslateWithSearch";
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -35,15 +36,19 @@ const Navbar = () => {
                     <li><a href="#leads" className="text-textDark hover:text-primary transition">Leads</a></li>
                 </ul>
 
-                {/* Login */}
-                <a
-                    href="/login"
-                    className="bg-primary text-white px-6 py-2.5 rounded-md font-medium
-  hover:bg-primaryDark transition-all duration-200 shadow-sm hover:shadow"
-                >
-                    Login
-                </a>
+                <div className="flex items-center gap-4">
+                    {/* Language Selector */}
+                    <GoogleTranslateWithSearch />
 
+                    {/* Login */}
+                    <a
+                        href="/login"
+                        className="bg-primary text-white px-6 py-2.5 rounded-md font-medium
+  hover:bg-primaryDark transition-all duration-200 shadow-sm hover:shadow"
+                    >
+                        Login
+                    </a>
+                </div>
             </div>
         </nav>
     );
