@@ -1,5 +1,9 @@
-const FinalCTA = () => (
-  <section className="py-24 bg-gradient-to-r from-primary to-primaryDark text-white text-center relative overflow-hidden">
+// src/components/home/FinalCTA.jsx
+const FinalCTA = ({ 
+  onTestClick = () => window.location.href = "/register", 
+  onDemoClick = () => alert("Demo!")
+}) => (
+  <section className="py-12 sm:py-24 bg-gradient-to-r from-primary to-primaryDark text-white text-center relative overflow-hidden">
     {/* Background pattern */}
     <div className="absolute inset-0 opacity-10">
       <div className="absolute inset-0" style={{
@@ -8,32 +12,32 @@ const FinalCTA = () => (
       }}></div>
     </div>
     
-    <div className="relative z-10 max-w-3xl mx-auto px-6">
-      <h2 className="text-4xl font-bold">
+    <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">
         6 Wochen <span className="text-yellow-300">kostenlos</span> testen
       </h2>
       
-      <p className="mt-6 text-xl opacity-90">
+      <p className="mt-4 sm:mt-6 text-base sm:text-xl opacity-90">
         Testen Sie unsere Software unverbindlich und ohne Risiko.
         Keine Kreditkarte erforderlich.
       </p>
       
-      <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          href="#testen"
-          className="inline-block bg-white text-primary px-10 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-all duration-200 shadow-2xl hover:shadow-3xl hover:-translate-y-1"
+      <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+        <button
+          onClick={onTestClick}
+          className="inline-block bg-white text-primary px-6 sm:px-10 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg hover:bg-gray-100 transition-all duration-200 shadow-2xl hover:shadow-3xl hover:-translate-y-1 text-center"
         >
           Jetzt kostenlos testen
-        </a>
-        <a
-          href="#demo"
-          className="inline-block border-2 border-white/50 text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-all duration-200 backdrop-blur-sm"
+        </button>
+        <button
+          onClick={onDemoClick}
+          className="inline-block border-2 border-white/50 text-white px-6 sm:px-10 py-3 sm:py-4 rounded-lg font-bold text-base sm:text-lg hover:bg-white/10 transition-all duration-200 backdrop-blur-sm text-center"
         >
           Demo vereinbaren
-        </a>
+        </button>
       </div>
       
-      <p className="mt-8 text-sm opacity-75">
+      <p className="mt-6 sm:mt-8 text-xs sm:text-sm opacity-75">
         Keine Verpflichtungen • Jederzeit kündbar • Volle Funktionen inklusive
       </p>
     </div>

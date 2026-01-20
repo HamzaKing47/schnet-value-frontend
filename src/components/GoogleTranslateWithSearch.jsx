@@ -248,7 +248,7 @@ const GoogleTranslateWithSearch = () => {
 
       {/* Dropdown */}
       {showDropdown && (
-        <div className="absolute right-0 mt-2 w-96 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden z-50 flex flex-col max-h-[500px]">
+        <div className="absolute right-0 mt-2 w-80 sm:w-96 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden z-50 flex flex-col max-h-[80vh] sm:max-h-[500px]">
           {/* Header */}
           <div className="p-4 border-b border-gray-100 flex-shrink-0">
             <div className="flex items-center justify-between mb-3">
@@ -292,7 +292,7 @@ const GoogleTranslateWithSearch = () => {
             {!searchTerm && (
               <div className="p-4 border-b border-gray-100">
                 <h4 className="text-sm font-medium text-gray-700 mb-3">Popular Languages</h4>
-                <div className="grid grid-cols-2 gap-2 max-h-60 overflow-y-auto pr-2 popular-scrollbar">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-60 overflow-y-auto pr-2 popular-scrollbar">
                   {popularLanguages.map((lang) => (
                     <button
                       key={lang.code}

@@ -1,4 +1,4 @@
-import Navbar from "../components/Navbar";
+// src/pages/Home.jsx - WORKING VERSION
 import Hero from "../components/home/Hero";
 import ValuationSection from "../components/home/ValuationSection";
 import TariffLevels from "../components/home/TariffLevels";
@@ -13,23 +13,24 @@ import FeaturesGrid from "../components/home/FeaturesGrid";
 import FinalCTA from "../components/home/FinalCTA";
 import Footer from "../components/home/Footer";
 
-const Home = () => (
-  <>
-    <Navbar />
-    <Hero />
-    <ValuationSection />
-    <TariffLevels />
-    <OnlineSoftware />
-    <DataDelivery />
-    <Documents />
-    <LeadGeneration />
-    <TrustBadge />
-    <FreeTrial />
-    <DetailedPricing />
-    <FeaturesGrid />
-    <FinalCTA />
-    <Footer />
-  </>
-);
+const Home = () => {
+  return (
+    <>
+      <Hero />
+      <ValuationSection />
+      <TariffLevels />
+      <OnlineSoftware />
+      <DataDelivery />
+      <Documents />
+      <LeadGeneration />
+      <TrustBadge />
+      <FreeTrial />
+      <DetailedPricing />
+      <FeaturesGrid />
+      <FinalCTA />
+      <Footer />
+    </>
+  );
+};
 
 export default Home;
