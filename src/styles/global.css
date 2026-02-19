@@ -30,3 +30,31 @@ html {
 .step-animate {
   animation: fadeIn 0.35s ease-out;
 }
+
+/* Prevent Google Translate from translating specific elements */
+.notranslate {
+    translate: none !important;
+}
+
+/* Fix for Google Translate issues with forms */
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+
+body {
+    top: 0px !important;
+}
+
+/* Fix for translated pages */
+html.translated-ltr,
+html.translated-rtl {
+    font-family: sans-serif;
+}
+
+/* Ensure form elements don't get weird translations */
+input.notranslate,
+button.notranslate,
+select.notranslate,
+textarea.notranslate {
+    font-family: inherit !important;
+}

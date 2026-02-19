@@ -1,3 +1,5 @@
+// src/components/home/ValuationSection.jsx - UPDATED
+import { Link } from "react-router-dom";
 import valuationImg from "../../assets/valuation-preview.jpg";
 
 const ValuationSection = () => (
@@ -31,15 +33,15 @@ const ValuationSection = () => (
           </p>
         </div>
         
-        <a 
-          href="#more"
+        <Link 
+          to="/funktionen"
           className="inline-flex items-center gap-2 mt-6 sm:mt-8 text-primary font-semibold hover:text-primaryDark transition text-sm sm:text-base"
         >
           Mehr erfahren
           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
           </svg>
-        </a>
+        </Link>
       </div>
       
       <div className="order-1 lg:order-2">

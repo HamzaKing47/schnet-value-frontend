@@ -1,3 +1,6 @@
+// src/components/home/FeaturesGrid.jsx - UPDATED
+import { Link } from "react-router-dom";
+
 const FeaturesGrid = () => {
   const features = [
     {
@@ -40,15 +43,15 @@ const FeaturesGrid = () => {
             <div key={index} className="bg-softBg rounded-xl p-4 sm:p-6 hover:shadow-lg transition-shadow duration-300">
               <h3 className="text-base sm:text-lg font-bold text-textDark mb-3">{feature.title}</h3>
               <p className="text-textMuted text-sm sm:text-base mb-4">{feature.description}</p>
-              <a 
-                href="#more"
+              <Link 
+                to="/screenshots"
                 className="inline-flex items-center gap-1 text-primary font-medium hover:text-primaryDark transition text-xs sm:text-sm"
               >
                 {feature.link}
                 <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
-              </a>
+              </Link>
             </div>
           ))}
         </div>

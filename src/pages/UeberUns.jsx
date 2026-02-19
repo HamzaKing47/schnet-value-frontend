@@ -1,11 +1,11 @@
-// src/pages/UeberUns.jsx
+// src/pages/UeberUns.jsx - CLEANED VERSION
 import Layout from "../components/Layout";
 
 const UeberUns = () => (
   <Layout>
     <div className="max-w-6xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold text-textDark mb-8">Über uns</h1>
-      
+
       <div className="grid lg:grid-cols-2 gap-12">
         {/* Left Column - Company Info */}
         <div className="space-y-8">
@@ -26,7 +26,7 @@ const UeberUns = () => (
             <h2 className="text-2xl font-bold text-textDark mb-6">Unsere Werte</h2>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                   <span className="text-primary font-bold">✓</span>
                 </div>
                 <div>
@@ -36,17 +36,17 @@ const UeberUns = () => (
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                   <span className="text-primary font-bold">✓</span>
                 </div>
                 <div>
                   <h3 className="font-semibold text-textDark mb-2">Benutzerfreundlichkeit</h3>
-                  <p className="text-textMuted text-sm">Komplexe Berechnungen einfach gemacht - auch für Einsteiger.</p>
+                  <p className="text-textMuted text-sm">Komplexe Berechnungen einfach gemacht – auch für Einsteiger.</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                   <span className="text-primary font-bold">✓</span>
                 </div>
                 <div>
@@ -58,35 +58,8 @@ const UeberUns = () => (
           </div>
         </div>
 
-        {/* Right Column - Team & Contact */}
+        {/* Right Column - Contact */}
         <div className="space-y-8">
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-textDark mb-6">Unser Team</h2>
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                  <span className="text-primary text-xl font-bold">MM</span>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-textDark mb-1">Max Mustermann</h3>
-                  <p className="text-textMuted text-sm mb-2">Geschäftsführer & Gründer</p>
-                  <p className="text-textMuted text-sm">Diplom-Ingenieur mit über 20 Jahren Erfahrung in der Immobilienwirtschaft.</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                  <span className="text-primary text-xl font-bold">EJ</span>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-textDark mb-1">Erika Beispiel</h3>
-                  <p className="text-textMuted text-sm mb-2">Head of Development</p>
-                  <p className="text-textMuted text-sm">Softwareentwicklerin mit Schwerpunkt auf Immobilien-Software.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <div className="bg-primaryLighter border border-primary/20 rounded-xl p-8">
             <h2 className="text-2xl font-bold text-textDark mb-6">Kontaktieren Sie uns</h2>
             <div className="space-y-4">
@@ -132,8 +105,20 @@ const UeberUns = () => (
               href="/kontakt"
               className="mt-6 inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primaryDark transition-colors"
             >
-              Kontaktformular
+              Zum Kontaktformular
             </a>
+          </div>
+
+          <div className="bg-white rounded-xl shadow-lg p-8">
+            <h2 className="text-2xl font-bold text-textDark mb-6">Rechtliches</h2>
+            <p className="text-textMuted">
+              <strong>ImmoInvent GmbH</strong><br />
+              Musterstraße 123<br />
+              70188 Stuttgart<br />
+              Handelsregister: HRB 123456, Amtsgericht Stuttgart<br />
+              Geschäftsführer: Max Mustermann<br />
+              USt-ID: DE123456789
+            </p>
           </div>
         </div>
       </div>

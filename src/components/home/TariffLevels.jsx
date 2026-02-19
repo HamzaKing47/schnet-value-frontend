@@ -1,3 +1,6 @@
+// TariffLevels.jsx - updated
+import { Link } from "react-router-dom";
+
 const TariffLevels = () => (
   <section className="py-12 sm:py-20 bg-softBg">
     <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -54,15 +57,15 @@ const TariffLevels = () => (
               ))}
             </ul>
 
-            <button
-              onClick={() => document.getElementById('tarif-vergleich').scrollIntoView({ behavior: 'smooth' })}
+            <Link
+              to="/preise"
               className="inline-flex items-center gap-2 text-primary font-semibold hover:text-primaryDark transition text-sm sm:text-base"
             >
               Unterschiede der Tarife
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
-            </button>
+            </Link>
           </div>
         ))}
       </div>

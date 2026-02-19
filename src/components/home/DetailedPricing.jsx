@@ -1,4 +1,5 @@
-// src/components/home/DetailedPricing.jsx
+import { Link } from "react-router-dom";
+
 const DetailedPricing = () => {
   const scrollToComparison = () => {
     const element = document.getElementById('tarif-vergleich');
@@ -18,7 +19,7 @@ const DetailedPricing = () => {
             Wählen Sie zwischen unseren drei Tarifen – für jede Anforderung die passende Lösung.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {/* Tarif Basic */}
           <div className="bg-white rounded-xl border-2 border-gray-100 p-6 sm:p-8 hover:border-primary/30 hover:shadow-xl transition-all duration-300">
@@ -31,7 +32,11 @@ const DetailedPricing = () => {
                 Das Einstiegspaket zur Erstellung von Kurzbewertungen
               </p>
             </div>
-            
+
+            <div className="text-3xl font-bold text-primary mb-6">
+              €29<span className="text-lg text-textMuted">/Monat</span>
+            </div>
+
             <div className="space-y-4 mb-8">
               <p className="text-textMuted text-sm sm:text-base">
                 Unser Basic-Tarif bietet Ihnen eine einfache Möglichkeit zur schnellen
@@ -43,15 +48,8 @@ const DetailedPricing = () => {
                 ansprechendes Dokument zum Immobilienwert.
               </p>
             </div>
-            
-            <button
-              onClick={scrollToComparison}
-              className="inline-flex items-center justify-center w-full bg-primary text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-primaryDark transition-all duration-200 shadow-sm hover:shadow text-sm sm:text-base"
-            >
-              Mehr erfahren →
-            </button>
           </div>
-          
+
           {/* Tarif Professional */}
           <div className="bg-white rounded-xl border-2 border-primary shadow-xl relative md:scale-105 md:z-10 order-first md:order-none">
             <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
@@ -59,7 +57,7 @@ const DetailedPricing = () => {
                 Beliebteste Wahl
               </span>
             </div>
-            
+
             <div className="p-6 sm:p-8">
               <div className="mb-6">
                 <span className="inline-block px-3 sm:px-4 py-1 bg-primary text-white rounded-full text-xs sm:text-sm font-semibold mb-4">
@@ -70,7 +68,11 @@ const DetailedPricing = () => {
                   Das Profipaket für Verkehrswertermittlungen
                 </p>
               </div>
-              
+
+              <div className="text-3xl font-bold text-primary mb-6">
+                €79<span className="text-lg text-textMuted">/Monat</span>
+              </div>
+
               <div className="space-y-4 mb-8">
                 <p className="text-textMuted text-sm sm:text-base">
                   Unser Professional Paket beinhaltet den kompletten Funktionsumfang des
@@ -81,16 +83,9 @@ const DetailedPricing = () => {
                   ImmoWertV erstellt werden.
                 </p>
               </div>
-              
-              <button
-                onClick={scrollToComparison}
-                className="inline-flex items-center justify-center w-full bg-primary text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-primaryDark transition-all duration-200 shadow-sm hover:shadow text-sm sm:text-base"
-              >
-                Mehr erfahren →
-              </button>
             </div>
           </div>
-          
+
           {/* Tarif Premium */}
           <div className="bg-white rounded-xl border-2 border-gray-100 p-6 sm:p-8 hover:border-primary/30 hover:shadow-xl transition-all duration-300">
             <div className="mb-6">
@@ -102,7 +97,11 @@ const DetailedPricing = () => {
                 Das Premium Paket mit erweitertem Funktionsumfang
               </p>
             </div>
-            
+
+            <div className="text-3xl font-bold text-primary mb-6">
+              €149<span className="text-lg text-textMuted">/Monat</span>
+            </div>
+
             <div className="space-y-4 mb-8">
               <p className="text-textMuted text-sm sm:text-base">
                 Dieses Paket erweitert den Funktionsumfang des "Professional" Pakets
@@ -114,16 +113,9 @@ const DetailedPricing = () => {
                 Gebäude pro Grundstück bewertet werden.
               </p>
             </div>
-            
-            <button
-              onClick={scrollToComparison}
-              className="inline-flex items-center justify-center w-full bg-primary text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-primaryDark transition-all duration-200 shadow-sm hover:shadow text-sm sm:text-base"
-            >
-              Mehr erfahren →
-            </button>
           </div>
         </div>
-        
+
         {/* Comparison CTA */}
         <div className="text-center mt-12 sm:mt-16">
           <p className="text-textMuted mb-6 text-sm sm:text-base">

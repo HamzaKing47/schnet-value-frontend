@@ -1,0 +1,98 @@
+import Layout from "../components/Layout";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
+
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000/api";
+
+const ForgotPassword = () => {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const res = await fetch(`${API_BASE}/forgot-password`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setSubmitted(true);
+        toast.success("E-Mail zum Zurücksetzen gesendet!");
+      } else {
+        toast.error(data.error || "Fehler beim Senden");
+      }
+    } catch (error) {
+      toast.error("Serverfehler");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <Layout>
+      <div className="min-h-[calc(100vh-96px)] flex items-center justify-center bg-gray-50 py-12 px-4">
+        <div className="max-w-md w-full">
+          <div className="bg-white rounded-xl shadow-lg p-8">
+            <h2 className="text-2xl font-bold text-textDark mb-6 text-center">
+              Passwort vergessen
+            </h2>
+            {submitted ? (
+              <div className="text-center">
+                <div className="mb-4 text-green-600">
+                  <svg className="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <p className="text-textMuted mb-4">
+                  Eine E-Mail mit Anweisungen zum Zurücksetzen Ihres Passworts wurde an <strong>{email}</strong> gesendet.
+                </p>
+                <Link to="/login" className="text-primary hover:underline">
+                  Zurück zum Login
+                </Link>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit}>
+                <p className="text-textMuted mb-6">
+                  Geben Sie Ihre E-Mail-Adresse ein, und wir senden Ihnen einen Link zum Zurücksetzen Ihres Passworts.
+                </p>
+                <div className="mb-6">
+                  <label htmlFor="email" className="block text-sm font-medium text-textDark mb-2">
+                    E-Mail-Adresse
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                    placeholder="ihre@email.de"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full bg-primary text-white py-3 px-4 rounded-lg font-semibold hover:bg-primaryDark disabled:opacity-50"
+                >
+                  {loading ? "Wird gesendet..." : "Passwort zurücksetzen"}
+                </button>
+                <div className="mt-4 text-center">
+                  <Link to="/login" className="text-sm text-primary hover:underline">
+                    Zurück zum Login
+                  </Link>
+                </div>
+              </form>
+            )}
+          </div>
+        </div>
+      </div>
+    </Layout>
+  );
+};
+
+export default ForgotPassword;
